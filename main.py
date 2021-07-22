@@ -32,6 +32,11 @@ def start_dump():
     subprocess.Popen(f'screen -dm -S hyaxe_dump tcpdump -i any -w /root/autodumper/dump-{datetime.now().strftime("%d-%m-%Y-%H-%M-%S")}.pcap', shell = True, stdout = subprocess.PIPE)
 
 if __name__ == '__main__':
+    for x in range(5):
+        os.system('screen -X -S hyaxe_dump kill')
+        os.system('screen -X -S hyaxe_dump quit')
+        os.system('killall -9 tcpdump')
+            
     logging.info("PCAP's Auto Dumper - Hyaxe Cloud | Evolved Hosting")
 
     while True:
