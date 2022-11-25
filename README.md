@@ -1,2 +1,2 @@
 # autodumper
-PCAP's Auto Dumper
+tcpdump auto dumper
